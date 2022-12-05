@@ -1,12 +1,17 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
 
 import styles from './Todo.module.scss';
 import Form from "./Form";
 import Item from "./Item";
 import AddBtn from "./AddBtn";
+import {Context} from "../../App";
 
-const Todo = () => {
-  const [todos, setTodos] = useState([]);
+const Todo = ({setTodos}) => {
+  const todos = useContext(Context);
+
+  const updateStorage = (updatedItem) => {
+    localStorage.todo = JSON.stringify(updatedItem);
+  }
 
   const addTask = (userInput) => {
     if (userInput) {
@@ -15,20 +20,32 @@ const Todo = () => {
         task: userInput,
         isComplete: false
       };
-      setTodos([...todos, newItem]);
+      setTodos([...todos.todo, newItem]);
+      updateStorage([...todos.todo, newItem]);
     }
   }
 
   const removeTask = (id) => {
-    setTodos([...todos.filter(todo => todo.id !== id)]);
+    setTodos([...todos.todo.filter(todo => todo.id !== id)]);
+    updateStorage([...todos.todo.filter(todo => todo.id !== id)])
   }
 
   const handleToggle = (id) => {
     setTodos([
-      ...todos.map(todo =>
-        todo.id === id ? {...todo, complete: !todo.complete} : {...todo}
+      ...todos.todo.map(todo =>
+        todo.id === id ? {...todo, isComplete: !todo.isComplete} : {...todo}
       )
     ]);
+    updateStorage([
+      ...todos.todo.map(todo =>
+        todo.id === id ? {...todo, isComplete: !todo.isComplete} : {...todo}
+      )
+    ]);
+  }
+
+  const clearAll = () => {
+    setTodos([]);
+    updateStorage([]);
   }
 
 
@@ -44,10 +61,10 @@ const Todo = () => {
         </div>
 
 
-        {todos.length === 0 ?
+        {todos.todo.length === 0 ?
           <div className={styles.todoWrapperNoTasks}>No Tasks to show</div>
           :
-          todos.map(todo => {
+            todos.todo.map(todo => {
             return (
               <Item
                 todo={todo}
@@ -57,6 +74,13 @@ const Todo = () => {
               />
             )
           })
+        }
+
+        {
+          todos.todo.length > 0 &&
+          <div className={styles.todoWrapperClearAllBlock}>
+            <button onClick={clearAll} className={styles.todoWrapperClearAllBlockBtn}>Clear all</button>
+          </div>
         }
       </div>
     </div>

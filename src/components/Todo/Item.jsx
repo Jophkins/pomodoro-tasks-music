@@ -4,9 +4,9 @@ import styles from './Todo.module.scss';
 
 const Item = ({ todo, toggleTask, removeTask }) => {
   return (
-    <div key={todo.id} className={todo.complete ? `${styles.todoWrapperItem} ${styles.todoWrapperItemDone}` : styles.todoWrapperItem }>
+    <div key={todo.id} className={todo.isComplete ? `${styles.todoWrapperItem} ${styles.todoWrapperItemDone}` : styles.todoWrapperItem }>
       <div
-        className={todo.complete ? `${styles.todoWrapperItemText} ${styles.todoWrapperItemStrike}` : styles.todoWrapperItemText}
+        className={todo.isComplete ? `${styles.todoWrapperItemText} ${styles.todoWrapperItemStrike}` : styles.todoWrapperItemText}
       >
         <svg onClick={() => toggleTask(todo.id)} stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 512 512"
              className="cursor-pointer ml-2 dark:text-stone-600 text-slate-500" height="1em" width="1em"
