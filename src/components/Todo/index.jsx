@@ -44,8 +44,10 @@ const Todo = ({setTodos}) => {
   }
 
   const clearAll = () => {
-    setTodos([]);
-    updateStorage([]);
+    if (window.confirm('All tasks will be deleted')) {
+      setTodos([]);
+      updateStorage([]);
+    }
   }
 
 

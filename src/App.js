@@ -2,6 +2,7 @@ import './App.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Todo from "./components/Todo";
 import {createContext, useEffect, useState} from "react";
+  import PomodoroTimer from "./components/PomodoroTimer";
 
 export const Context = createContext(null);
 
@@ -9,7 +10,9 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    localStorage.todo = JSON.stringify([]);
+    if (localStorage.todo.length === 0) {
+      localStorage.todo = JSON.stringify([]);
+    }
     setTodos(JSON.parse(localStorage.todo));
   }, [])
 
@@ -25,7 +28,9 @@ function App() {
                 <div className="col-12 col-md-4">
                   <Todo setTodos={setTodos}/>
                 </div>
-                <div className="col-12 col-md-4">Lorem ipsum dolor sit amet.</div>
+                <div className="col-12 col-md-4">
+                  <PomodoroTimer />
+                </div>
                 <div className="col-12 col-md-4">Lorem ipsum dolor sit amet.</div>
               </div>
             </div>
