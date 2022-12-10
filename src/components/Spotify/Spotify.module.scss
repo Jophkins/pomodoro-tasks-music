@@ -1,0 +1,29 @@
+.spotify {
+  padding: 10px 0;
+  width: 400px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  background-color: #0F1923;
+  &Wrapper {
+    &Title {
+      padding: 10px 10px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    &Playlist {
+
+    }
+    &Input {
+      padding: 10px 20px;
+
+      input {
+        padding: 5px;
+        width: 100%;
+        background-color: rgba(46, 49, 56, 0.88);
+        border: none;
+        border-radius: 2px;
+        color: #cecece;
+      }
+    }
+  }
+}

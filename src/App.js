@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Todo from "./components/Todo";
 import {createContext, useEffect, useState} from "react";
   import PomodoroTimer from "./components/PomodoroTimer";
+import Spotify from "./components/Spotify";
 
 export const Context = createContext(null);
 
@@ -31,7 +32,9 @@ function App() {
                 <div className="col-12 col-md-4">
                   <PomodoroTimer />
                 </div>
-                <div className="col-12 col-md-4">Lorem ipsum dolor sit amet.</div>
+                <div className="col-12 col-md-4">
+                  <Spotify />
+                </div>
               </div>
             </div>
           </div>

@@ -4,8 +4,8 @@ import styles from './Timer.module.scss';
 
 const PomodoroTimer = () => {
 
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(10);
+  const [minutes, setMinutes] = useState(25);
+  const [seconds, setSeconds] = useState(0);
   const [isTimerOn, setIsTimerOn] = useState(false);
   const [isBreak, setIsBreak] = useState(false);
   const [isShortBreak, setIsShortBreak] = useState(true)
@@ -21,7 +21,7 @@ const PomodoroTimer = () => {
           setSeconds(59);
           setMinutes(minutes - 1);
         } else {
-          let minutes = isBreak ? 24 : (isShortBreak ? 1 : 2);
+          let minutes = isBreak ? 24 : (isShortBreak ? 4 : 24);
           let seconds = 59
 
           setSeconds(seconds);
