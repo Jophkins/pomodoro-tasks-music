@@ -1,3 +1,80 @@
 .app {
-  padding-top: 100px;
+  background-image: url("/assets/images/winter-bus-stop.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+  height: auto;
+}
+
+.app-wrapper {
+  position: relative;
+  margin-top: 100px;
+  z-index: 999;
+}
+
+.nav {
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+
+    li {
+      margin-left: 10px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      background-color: #0F1923;
+      font-weight: 700;
+      color: #ffffff;
+      cursor: pointer;
+    }
+  }
+}
+
+.bg-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.snowing {
+  --size: 1vw;
+  width: var(--size);
+  height: var(--size);
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: -5vh;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translate3d(var(--left-ini), 0, 0);
+  }
+  100% {
+    transform: translate3d(var(--left-end), 110vh, 0);
+  }
+}
+
+@for $i from 1 through 50 {
+  .snowing:nth-child(#{$i}) {
+    opacity: #{random(10) / 10};
+    --size: #{random(3) * 0.2}vw;
+    --left-ini: #{random(20) - 10}vw;
+    --left-end: #{random(20) - 10}vw;
+    left: #{random(90)}vw;
+    animation: snowfall #{5 + random(30)}s linear infinite;
+    animation-delay: -#{random(20)}s;
+  }
+}
+
+.snowing:nth-child(6n) {
+  filter: blur(3px);
 }

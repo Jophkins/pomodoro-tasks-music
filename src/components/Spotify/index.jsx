@@ -6,7 +6,7 @@ const Spotify = () => {
 
   const [spotifyInput, setSpotifyInput] = useState('');
   const [spotifyURL, setSpotifyURL] = useState(
-    'https://open.spotify.com/embed/playlist/1MZIjTu5sQT11G4XNaoqes?utm_source=generator&theme=0'
+    'https://open.spotify.com/embed/playlist/1MZIjTu5sQT11G4XNaoqes?si=66283f8de349433b&theme=0'
   );
 
   const handleChange = (event) => {
