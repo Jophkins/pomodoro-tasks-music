@@ -3,7 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Todo from "./components/Todo";
 import {createContext, useEffect, useState} from "react";
 import PomodoroTimer from "./components/PomodoroTimer";
-import Spotify from "./components/Spotify";
+import MusicPlayer from "./components/MusicPlayer";
+import Nav from "./components/Nav";
 
 export const Context = createContext(null);
 
@@ -79,12 +80,7 @@ function App() {
           </div>
           </div>
           <div className="container">
-            <nav className="nav">
-              <ul>
-                <li>Background</li>
-                <li>Settings</li>
-              </ul>
-            </nav>
+            <Nav />
             <div className="app-wrapper">
               <div className="row">
                 <div className="col-12 col-md-6 col-lg-4">
@@ -94,7 +90,7 @@ function App() {
                   <Todo setTodos={setTodos}/>
                 </div>
                 <div className="col-12 col-md-6 col-lg-4">
-                  <Spotify/>
+                  <MusicPlayer />
                 </div>
               </div>
             </div>

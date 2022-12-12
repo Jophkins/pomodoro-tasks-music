@@ -1,0 +1,28 @@
+.musicPlayer {
+  padding: 10px 0;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  background-color: #0F1923;
+  &Wrapper {
+    &Title {
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 10px;
+      font-weight: 700;
+      color: #ffffff;
+      
+      span {
+        cursor: pointer;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.content {
+  display: none;
+}
+
+.activeContent {
+  display: block;
+}

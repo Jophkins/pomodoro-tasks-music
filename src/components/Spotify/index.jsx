@@ -26,11 +26,8 @@ const Spotify = () => {
   }
 
   return (
-    <div className={styles.spotify}>
+      <>
       <div className={styles.spotifyWrapper}>
-        <div className={styles.spotifyWrapperTitle}>
-          Spotify
-        </div>
         <div className={styles.spotifyWrapperPlaylist}>
           <iframe title="spot"
                   src={spotifyURL}
@@ -40,9 +37,9 @@ const Spotify = () => {
         </div>
       </div>
       <div className={styles.spotifyWrapperInput}>
-        <input onChange={handleChange} onKeyDown={handleKeyPress} value={spotifyInput} type="text" placeholder='CTRL-V spotify URL here and hit Enter'/>
+        <input onChange={handleChange} onKeyDown={handleKeyPress} value={spotifyInput} type="text" placeholder='CTRL-V spotify playlist URL here and hit Enter'/>
       </div>
-    </div>
+      </>
   );
 };
 

@@ -14,26 +14,6 @@
   z-index: 999;
 }
 
-.nav {
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-
-    li {
-      margin-left: 10px;
-      padding: 5px 10px;
-      border-radius: 5px;
-      background-color: #0F1923;
-      font-weight: 700;
-      color: #ffffff;
-      cursor: pointer;
-    }
-  }
-}
-
 .bg-container {
   position: absolute;
   top: 0;
