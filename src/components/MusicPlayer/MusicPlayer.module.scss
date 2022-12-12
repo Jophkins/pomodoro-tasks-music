@@ -7,16 +7,41 @@
     &Title {
       display: flex;
       justify-content: space-around;
-      padding: 10px 10px;
+      padding: 10px 10px 0 10px;
       font-weight: 700;
       color: #ffffff;
-      
+
       span {
+        user-select: none;
         cursor: pointer;
-        border-bottom: none;
       }
     }
   }
+}
+
+.tab {
+  padding: 10px;
+  border: 2px solid transparent;
+}
+
+.activeTab {
+  padding: 5px;
+  transition: 0.2s all ease-in-out;
+}
+
+.yandexColor {
+  border-bottom: 4px solid #FFDB4D;
+  color: #FFDB4D;
+}
+
+.spotifyColor {
+  border-bottom: 4px solid #1ED760;
+  color: #1ED760;
+}
+
+.youtubeColor {
+  border-bottom: 4px solid #FF0000;
+  color: #FF0000;
 }
 
 .content {
