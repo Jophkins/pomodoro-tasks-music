@@ -83,13 +83,13 @@ function App() {
             <Nav />
             <div className="app-wrapper">
               <div className="row">
-                <div className="col-12 col-md-6 col-lg-4">
+                <div className="col-12 col-md-6 col-lg-4 mb-4">
                   <PomodoroTimer/>
                 </div>
-                <div className="col-12 col-md-6 col-lg-4">
+                <div className="col-12 col-md-6 col-lg-4 mb-4">
                   <Todo setTodos={setTodos}/>
                 </div>
-                <div className="col-12 col-md-6 col-lg-4">
+                <div className="col-12 col-md-6 col-lg-4 mb-4">
                   <MusicPlayer />
                 </div>
               </div>

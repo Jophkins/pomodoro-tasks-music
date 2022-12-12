@@ -4,11 +4,18 @@ import styles from "./Nav.module.scss";
 
 const Nav = () => {
 
-  const [time, setTime] = useState(null);
+  const [time, setTime] = useState(new Date().toLocaleString('en-US', {dateStyle: "long", timeStyle: "medium"}) + "");
+
+  const refreshTime = () => {
+    setTime(new Date().toLocaleString('en-US', {dateStyle: "long", timeStyle: "medium"}) + "");
+  }
 
   useEffect(() => {
-    setTime(new Date().toLocaleString() + "")
-  }, [time])
+    const timerId = setInterval(refreshTime, 1000);
+    return function cleanUp() {
+      clearInterval(timerId);
+    }
+  }, []);
 
 
   return (
