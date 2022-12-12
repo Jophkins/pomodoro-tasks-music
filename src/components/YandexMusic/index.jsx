@@ -8,17 +8,16 @@ const YandexMusic = () => {
     'https://music.yandex.ru/iframe/#playlist/TheChilledCow/1000'
   );
 
-  // https://music.yandex.ru/users/TheChilledCow/playlists/1000
-  // https://music.yandex.ru/users/pitwithmagic/playlists/1002
-
   const handleChange = (event) => {
     setYandexInput(event.target.value);
   }
 
   const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && yandexInput) {
       yandexPlaylistId(yandexInput);
       setYandexInput('');
+    } else {
+      setYandexURL('https://music.yandex.ru/iframe/#playlist/TheChilledCow/1000');
     }
   }
 

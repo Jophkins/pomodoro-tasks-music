@@ -14,9 +14,11 @@ const Spotify = () => {
   }
 
   const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && spotifyInput) {
       spotifyPlaylistId(spotifyInput);
       setSpotifyInput('');
+    } else  {
+      setSpotifyURL('https://open.spotify.com/embed/playlist/1MZIjTu5sQT11G4XNaoqes?si=66283f8de349433b&theme=0');
     }
   }
 

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import styles from "./MusicPlayer.module.scss";
 import Spotify from "../Spotify";
 import YandexMusic from "../YandexMusic";
+import YoutubeMusic from "../YoutubeMusic";
 
 const MusicPlayer = () => {
 
@@ -25,7 +26,7 @@ const MusicPlayer = () => {
         <Spotify/>
       </div>
       <div className={(titleTabsToggler === 3 ? styles.activeContent : styles.content)}>
-        YOUTUBE
+        <YoutubeMusic />
       </div>
     </div>
   </div>);
