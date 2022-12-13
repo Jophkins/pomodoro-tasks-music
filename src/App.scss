@@ -11,7 +11,7 @@
 .app-wrapper {
   position: relative;
   margin-top: 100px;
-  z-index: 999;
+  z-index: 998;
 }
 
 .bg-container {
@@ -57,4 +57,19 @@
 
 .snowing:nth-child(6n) {
   filter: blur(3px);
+}
+
+.modal-backdrop {
+  z-index: 1 !important;
+}
+
+.ongoing {
+  position: absolute;
+  display: block;
+  margin-top: 10px;
+  padding: 10px;
+  text-align: center;
+  color: #000000;
+  font-weight: 700;
+  z-index: 1;
 }

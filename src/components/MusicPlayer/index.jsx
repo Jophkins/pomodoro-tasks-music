@@ -14,6 +14,11 @@ const MusicPlayer = () => {
 
   return (
     <div className={styles.musicPlayer}>
+      <div className={styles.musicPlayerPopupParent}>
+        <div className={styles.musicPlayerPopupParentChild}>
+          Make sure you logged in your music service account. Then refresh.
+        </div>
+      </div>
     <div className={styles.musicPlayerWrapper}>
       <div className={styles.musicPlayerWrapperTitle}>
         <span onClick={() => tabsHandler(1)} className={(titleTabsToggler === 1 ? `${styles.activeTab} ${styles.yandexColor}` : styles.tab)}>YaMusic</span>

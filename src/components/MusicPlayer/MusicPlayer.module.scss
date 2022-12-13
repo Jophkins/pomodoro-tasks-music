@@ -1,13 +1,37 @@
 .musicPlayer {
-  padding: 10px 0;
+  padding-bottom: 10px;
   border: 1px solid #ffffff;
   border-radius: 8px;
   background-color: #0F1923;
+
+  &PopupParent {
+    border: 5px solid transparent;
+
+    &:hover &Child {
+      opacity: 1;
+    }
+
+    &Child {
+      opacity: 0;
+      position: absolute;
+      top: -60px;
+      padding: 5px;
+      color: #ffffff;
+      text-align: center;
+      user-select: none;
+      background-color: rgba(42, 46, 53, 0.85);
+      border-radius: 8px;
+      transition: 0.2s all ease-in-out;
+    }
+  }
+
+
+
   &Wrapper {
     &Title {
       display: flex;
       justify-content: space-around;
-      padding: 10px 10px 0 10px;
+      padding: 5px 10px 0 10px;
       font-weight: 700;
       color: #ffffff;
 

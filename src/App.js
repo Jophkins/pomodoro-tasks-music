@@ -26,61 +26,65 @@ function App() {
         <div className="app-inner">
           <div className="bg-container">
             <div className="bg-wrapper">
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-            <div className="snowing"></div>
-          </div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+              <div className="snowing"></div>
+            </div>
           </div>
           <div className="container">
-            <Nav />
+            <Nav/>
+            <div className="ongoing">
+              Development ongoing. Please be patient.
+              <button onClick={() => document.querySelector('.ongoing').style.display = 'none'}>X</button>
+            </div>
             <div className="app-wrapper">
               <div className="row">
                 <div className="col-12 col-md-6 col-lg-4 mb-4">
@@ -90,7 +94,7 @@ function App() {
                   <Todo setTodos={setTodos}/>
                 </div>
                 <div className="col-12 col-md-6 col-lg-4 mb-4">
-                  <MusicPlayer />
+                  <MusicPlayer/>
                 </div>
               </div>
             </div>

@@ -1,0 +1,48 @@
+.openBtn {
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+}
+
+h2 {
+  color: #000;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  color: #828282;
+  &Item {
+    
+  }
+}
+
+.activeTab {
+  padding: 5px;
+  color: #000;
+}
+
+.content {
+  color: #000;
+  &Item {
+    display: none;
+  }
+}
+
+.activeContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  border: 2px dotted #ccc;
+
+  span {
+    display: block;
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 5px;
+  }
+}
