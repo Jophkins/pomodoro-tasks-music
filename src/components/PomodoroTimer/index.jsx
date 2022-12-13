@@ -1,8 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 
 import styles from './Timer.module.scss';
+import {Context} from "../../App";
+import locale from "../../utils/locale";
 
 const PomodoroTimer = () => {
+
+  const language = useContext(Context);
 
   const [minutes, setMinutes] = useState(25);
   const [seconds, setSeconds] = useState(0);
@@ -72,14 +76,14 @@ const PomodoroTimer = () => {
     <div className={styles.pomodoro}>
       <div className={styles.pomodoroWrapper}>
         <div className={styles.pomodoroWrapperTopBtn}>
-          <button onClick={shortBreakHandler} className={isShortBreak ? styles.active : null}>Short Break</button>
-          <button onClick={longBreakHandler} className={isShortBreak ? null : styles.active}>Long Break</button>
+          <button onClick={shortBreakHandler} className={isShortBreak ? styles.active : null}>{locale[language.locale].timer.short}</button>
+          <button onClick={longBreakHandler} className={isShortBreak ? null : styles.active}>{locale[language.locale].timer.long}</button>
         </div>
-        <div className={styles.pomodoroWrapperSession}>{isBreak ? 'Break time! Next session starts in:' : 'Session'}</div>
+        <div className={styles.pomodoroWrapperSession}>{isBreak ? locale[language.locale].timer.breakTime : locale[language.locale].timer.session}</div>
         <div className={styles.pomodoroWrapperTimer}>{timerMinutes}:{timerSeconds}</div>
         <div className={styles.pomodoroWrapperControls}>
-          <button onClick={timerPauseHandler}>{isTimerOn ? 'Pause' : 'Start'}</button>
-          <button onClick={resetTimer}>Reset</button>
+          <button onClick={timerPauseHandler}>{isTimerOn ? locale[language.locale].timer.pause : locale[language.locale].timer.start}</button>
+          <button onClick={resetTimer}>{locale[language.locale].timer.reset}</button>
         </div>
       </div>
     </div>

@@ -11,7 +11,6 @@
 .app-wrapper {
   position: relative;
   margin-top: 100px;
-  z-index: 998;
 }
 
 .bg-container {
@@ -21,7 +20,7 @@
   bottom: 0;
   left: 0;
   overflow: hidden;
-  z-index: 1;
+  z-index: 0;
 }
 
 .snowing {
@@ -60,7 +59,7 @@
 }
 
 .modal-backdrop {
-  z-index: 1 !important;
+  z-index: 0 !important;
 }
 
 .ongoing {
@@ -72,4 +71,27 @@
   color: #000000;
   font-weight: 700;
   z-index: 1;
+}
+
+.donation {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    align-self: start;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px 5px 0 0;
+    background-color: #0F1923;
+    user-select: none;
+    font-weight: 700;
+    color: #ffffff;
+    cursor: pointer;
+  }
 }

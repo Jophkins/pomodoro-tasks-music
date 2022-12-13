@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from "./Todo.module.scss";
 
-const AddBtn = () => {
+const AddBtn = ({close, add}) => {
 
   const [btnToggle, setBtnToggle] = useState(false);
 
@@ -13,9 +13,9 @@ const AddBtn = () => {
 
   return (
     btnToggle ?
-      <button onClick={addHandler} className={styles.todoWrapperHeaderFormBtn}>Close</button>
+      <button onClick={addHandler} className={styles.todoWrapperHeaderFormBtn}>{close}</button>
       :
-      <button onClick={addHandler} className={styles.todoWrapperHeaderFormBtn}>Add</button>
+      <button onClick={addHandler} className={styles.todoWrapperHeaderFormBtn}>{add}</button>
   );
 };
 

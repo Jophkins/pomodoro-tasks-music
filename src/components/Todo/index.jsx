@@ -5,8 +5,10 @@ import Form from "./Form";
 import Item from "./Item";
 import AddBtn from "./AddBtn";
 import {Context} from "../../App";
+import locale from "../../utils/locale";
 
 const Todo = ({setTodos}) => {
+  const language = useContext(Context);
   const todos = useContext(Context);
 
   const updateStorage = (updatedItem) => {
@@ -44,7 +46,7 @@ const Todo = ({setTodos}) => {
   }
 
   const clearAll = () => {
-    if (window.confirm('All tasks will be deleted')) {
+    if (window.confirm(locale[language.locale].todo.confirm)) {
       setTodos([]);
       updateStorage([]);
     }
@@ -55,16 +57,16 @@ const Todo = ({setTodos}) => {
     <div className={styles.todo}>
       <div className={styles.todoWrapper}>
         <div className={styles.todoWrapperHeader}>
-          <h1 className={styles.todoWrapperHeaderTitle}>Task tracker</h1>
-          <AddBtn />
+          <h1 className={styles.todoWrapperHeaderTitle}>{locale[language.locale].todo.title}</h1>
+          <AddBtn add={locale[language.locale].todo.add} close={locale[language.locale].todo.close}/>
           <div className={`${styles.todoWrapperHeaderFormBlock} ${styles.hide}`}>
-            <Form addTask={addTask}/>
+            <Form addTask={addTask} placeholder={locale[language.locale].todo.placeholder} save={locale[language.locale].todo.save}/>
           </div>
         </div>
 
 
         {todos.todo.length === 0 ?
-          <div className={styles.todoWrapperNoTasks}>No Tasks to show</div>
+          <div className={styles.todoWrapperNoTasks}>{locale[language.locale].todo.noTasks}</div>
           :
             todos.todo.map(todo => {
             return (
@@ -81,7 +83,7 @@ const Todo = ({setTodos}) => {
         {
           todos.todo.length > 0 &&
           <div className={styles.todoWrapperClearAllBlock}>
-            <button onClick={clearAll} className={styles.todoWrapperClearAllBlockBtn}>Clear all</button>
+            <button onClick={clearAll} className={styles.todoWrapperClearAllBlockBtn}>{locale[language.locale].todo.clear}</button>
           </div>
         }
       </div>

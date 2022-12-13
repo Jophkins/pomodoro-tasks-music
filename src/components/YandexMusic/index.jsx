@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from "./YandexMusic.module.scss";
 
-const YandexMusic = () => {
+const YandexMusic = ({placeholder}) => {
 
   const [yandexInput, setYandexInput] = useState('');
   const [yandexURL, setYandexURL] = useState(
@@ -37,7 +37,7 @@ const YandexMusic = () => {
       </div>
       <div className={styles.yandexWrapperInput}>
         <input onChange={handleChange} onKeyDown={handleKeyPress} value={yandexInput} type="text"
-               placeholder='CTRL-V yandex playlist URL here and hit Enter'/>
+               placeholder={placeholder}/>
       </div>
     </>
   );

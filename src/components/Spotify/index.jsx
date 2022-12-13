@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import styles from './Spotify.module.scss';
 
-const Spotify = () => {
+const Spotify = ({placeholder}) => {
 
   const [spotifyInput, setSpotifyInput] = useState('');
   const [spotifyURL, setSpotifyURL] = useState(
@@ -38,9 +38,10 @@ const Spotify = () => {
                   loading="lazy"/>
         </div>
       </div>
-      <div className={styles.spotifyWrapperInput}>
-        <input onChange={handleChange} onKeyDown={handleKeyPress} value={spotifyInput} type="text" placeholder='CTRL-V spotify playlist URL here and hit Enter'/>
-      </div>
+        <div className={styles.spotifyWrapperInput}>
+          <input onChange={handleChange} onKeyDown={handleKeyPress} value={spotifyInput} type="text"
+                 placeholder={placeholder}/>
+        </div>
       </>
   );
 };

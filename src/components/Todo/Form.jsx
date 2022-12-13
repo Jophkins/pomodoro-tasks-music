@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 import styles from './Todo.module.scss';
 
-const Form = ({ addTask }) => {
+const Form = ({ addTask, placeholder, save }) => {
 
   const [userInput, setUserInput] = useState('');
 
@@ -30,10 +30,10 @@ const Form = ({ addTask }) => {
         type="text"
         onChange={handleChange}
         onKeyDown={handleKeyPress}
-        placeholder="Add task"
+        placeholder={placeholder}
         maxLength='35'
       />
-      <button className={styles.todoWrapperHeaderFormBlockBtn}>Save</button>
+      <button className={styles.todoWrapperHeaderFormBlockBtn}>{save}</button>
     </form>
   );
 };

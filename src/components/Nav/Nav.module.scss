@@ -20,6 +20,15 @@
       font-weight: 700;
       color: #ffffff;
       cursor: pointer;
+      user-select: none;
+
+      select {
+        background-color: #0F1923;
+        color: #ffffff;
+        font-weight: 700;
+        border: none;
+        text-align: center;
+      }
     }
   }
 }

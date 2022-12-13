@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from "./YoutubeMusic.module.scss";
 
-const YoutubeMusic = () => {
+const YoutubeMusic = ({placeholder}) => {
 
   const [youtubeInput, setYoutubeInput] = useState('');
   const [youtubeURL, setYoutubeURL] = useState(
@@ -37,7 +37,7 @@ const YoutubeMusic = () => {
       </div>
       <div className={styles.youtubeWrapperInput}>
         <input onChange={handleChange} onKeyDown={handleKeyPress} value={youtubeInput} type="text"
-               placeholder='CTRL-V youtube URL here and hit Enter'/>
+               placeholder={placeholder}/>
       </div>
     </>
   );
