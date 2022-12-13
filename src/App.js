@@ -9,6 +9,7 @@ import Nav from "./components/Nav";
 export const Context = createContext(null);
 
 function App() {
+  const version = '0.2';
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
@@ -82,7 +83,7 @@ function App() {
           <div className="container">
             <Nav/>
             <div className="ongoing">
-              Development ongoing. Please be patient.
+              Development ongoing. Please be patient. ver{version}
               <button onClick={() => document.querySelector('.ongoing').style.display = 'none'}>X</button>
             </div>
             <div className="app-wrapper">
