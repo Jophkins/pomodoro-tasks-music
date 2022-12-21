@@ -1,4 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
+import timerEndSound from '../../assets/sounds/timer-end-01.wav';
+import breakEndSound from '../../assets/sounds/break-end-01.wav';
 
 import styles from './Timer.module.scss';
 import {Context} from "../../App";
@@ -23,17 +25,19 @@ const PomodoroTimer = () => {
       if (seconds === 0) {
         if (minutes !== 0) {
           setSeconds(59);
-          setMinutes(minutes - 1);
+          setMinutes((prev) => prev - 1);
         } else {
-          let minutes = isBreak ? 24 : (isShortBreak ? 4 : 24);
-          let seconds = 59
+          let minutes = isBreak ? 24 : (isShortBreak ? 4 : 14);
+          let seconds = 59;
+
+          isBreak ? new Audio(breakEndSound).play() : new Audio(timerEndSound).play();
 
           setSeconds(seconds);
           setMinutes(minutes);
           setIsBreak(!isBreak);
         }
       } else {
-        setSeconds(seconds - 1);
+        setSeconds((prev) => prev - 1);
       }
 
     }, 1000);
