@@ -1,3 +1,4 @@
 # https://www.robotstxt.org/robotstxt.html
+host: https://pitwithmagic.com/
 User-agent: *
 Disallow:
