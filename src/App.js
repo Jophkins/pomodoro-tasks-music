@@ -11,7 +11,7 @@ import DonationModal from "./components/DonationModal";
 export const Context = createContext(null);
 
 function App() {
-  const version = '0.3';
+  const version = '0.4';
   const [todos, setTodos] = useState([]);
   const [language, setLanguage] = useState('en');
 
