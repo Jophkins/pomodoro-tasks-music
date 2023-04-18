@@ -4,7 +4,7 @@ import styles from './Todo.module.scss';
 import Form from "./Form";
 import Item from "./Item";
 import AddBtn from "./AddBtn";
-import {Context} from "../../App";
+import {Context} from "../../pages/PomodorkoApp";
 import locale from "../../utils/locale";
 
 const Todo = ({setTodos}) => {

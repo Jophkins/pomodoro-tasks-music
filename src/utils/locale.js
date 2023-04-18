@@ -5,7 +5,10 @@ const locale = {
     devOngoing: 'Development ongoing. Please be patient.',
     nav: {
       date: 'en-US',
-      settings: 'Settings',
+      settings: {
+        btnTitle: 'Settings',
+        title: 'Settings'
+      },
       donate: {
         title: 'Buy me a cup of coffee',
         thanks: 'Thank you!',
@@ -43,7 +46,10 @@ const locale = {
     devOngoing: 'Разработка в процессе. Пожалуйста будьте терпеливы.',
     nav: {
       date: 'ru-RU',
-      settings: 'Настройки',
+      settings: {
+        btnTitle: 'Настройки',
+        title: 'Настройки'
+      },
       donate: {
         title: 'Угостите меня кофе',
         thanks: 'Спасибо!',

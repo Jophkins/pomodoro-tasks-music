@@ -1,8 +1,9 @@
 import React, {useContext, useEffect, useState} from 'react';
 
 import styles from "./Nav.module.scss";
-import {Context} from "../../App";
+import {Context} from "../../pages/PomodorkoApp";
 import locale from '../../utils/locale';
+import SettingsModal from "../SettingsModal";
 
 const Nav = ({setLanguage}) => {
 
@@ -31,7 +32,9 @@ const Nav = ({setLanguage}) => {
     <nav className={styles.nav}>
       <ul>
         <li>{time}</li>
-        <li>{locale[language.locale].nav.settings}</li>
+        <li>
+          <SettingsModal />
+        </li>
       </ul>
       <ul>
         <li>

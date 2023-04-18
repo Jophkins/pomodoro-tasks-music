@@ -3,7 +3,7 @@ import timerEndSound from '../../assets/sounds/timer-end-01.wav';
 import breakEndSound from '../../assets/sounds/break-end-01.wav';
 
 import styles from './Timer.module.scss';
-import {Context} from "../../App";
+import {Context} from "../../pages/PomodorkoApp";
 import locale from "../../utils/locale";
 
 const PomodoroTimer = () => {

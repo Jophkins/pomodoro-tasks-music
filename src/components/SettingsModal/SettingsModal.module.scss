@@ -1,0 +1,59 @@
+.openBtn {
+  background: transparent;
+  color: #ffffff;
+  border: none;
+  font-weight: 700;
+}
+
+.modalContentCustom {
+  background-color: #0F1923;
+  h2 {
+    color: #ffffff;
+  }
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  color: #828282;
+  &Item {
+
+  }
+}
+
+.activeTab {
+  padding: 5px;
+  color: #ffffff;
+}
+
+.content {
+  color: #ffffff;
+  &Item {
+    display: none;
+  }
+  &Background {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+.activeContent {
+  text-align: center;
+  padding: 10px;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+
+    li {
+      margin-top: 10px;
+      width: 100%;
+
+      .option {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+  }
+}

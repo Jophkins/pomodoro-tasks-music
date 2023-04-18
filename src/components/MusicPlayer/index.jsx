@@ -3,7 +3,7 @@ import styles from "./MusicPlayer.module.scss";
 import Spotify from "../Spotify";
 import YandexMusic from "../YandexMusic";
 import YoutubeMusic from "../YoutubeMusic";
-import {Context} from "../../App";
+import {Context} from "../../pages/PomodorkoApp";
 import locale from "../../utils/locale";
 
 const MusicPlayer = () => {
@@ -24,18 +24,18 @@ const MusicPlayer = () => {
       </div>
     <div className={styles.musicPlayerWrapper}>
       <div className={styles.musicPlayerWrapperTitle}>
-        <span onClick={() => tabsHandler(1)} className={(titleTabsToggler === 1 ? `${styles.activeTab} ${styles.yandexColor}` : styles.tab)}>YaMusic</span>
-        <span onClick={() => tabsHandler(2)} className={(titleTabsToggler === 2 ? `${styles.activeTab} ${styles.spotifyColor}` : styles.tab)}>Spotify</span>
-        <span onClick={() => tabsHandler(3)} className={(titleTabsToggler === 3 ? `${styles.activeTab} ${styles.youtubeColor}` : styles.tab)}>YouTube</span>
+        <span onClick={() => tabsHandler(1)} className={(titleTabsToggler === 1 ? `${styles.activeTab} ${styles.spotifyColor}` : styles.tab)}>Spotify</span>
+        <span onClick={() => tabsHandler(2)} className={(titleTabsToggler === 2 ? `${styles.activeTab} ${styles.youtubeColor}` : styles.tab)}>YouTube</span>
+        <span onClick={() => tabsHandler(3)} className={(titleTabsToggler === 3 ? `${styles.activeTab} ${styles.yandexColor}` : styles.tab)}>YaMusic</span>
       </div>
       <div className={(titleTabsToggler === 1 ? styles.activeContent : styles.content)}>
-        <YandexMusic placeholder={locale[language.locale].musicPlayer.inputYa} />
-      </div>
-      <div className={(titleTabsToggler === 2 ? styles.activeContent : styles.content)}>
         <Spotify placeholder={locale[language.locale].musicPlayer.inputSp}/>
       </div>
-      <div className={(titleTabsToggler === 3 ? styles.activeContent : styles.content)}>
+      <div className={(titleTabsToggler === 2 ? styles.activeContent : styles.content)}>
         <YoutubeMusic placeholder={locale[language.locale].musicPlayer.inputYou}/>
+      </div>
+      <div className={(titleTabsToggler === 3 ? styles.activeContent : styles.content)}>
+        <YandexMusic placeholder={locale[language.locale].musicPlayer.inputYa} />
       </div>
     </div>
   </div>
