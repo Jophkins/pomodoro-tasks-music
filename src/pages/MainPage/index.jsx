@@ -58,7 +58,13 @@ const MainPage = () => {
       link: "https://twitter.com/serhiiburiak29",
       img: twitter_icon
     }
-  ]
+  ];
+
+  React.useEffect(() => {
+    setTimeout(() => {
+
+    }, 1500)
+  }, [])
 
   return (
     <div className={styles.mainPage}>
@@ -76,7 +82,7 @@ const MainPage = () => {
                   <span>Serhii B.</span>
                   <span>Web Developer</span>
                 </div>
-                Web Developer with 2+ years' experience in React.js & Node.js. Lifelong learner, strong collaborator, mentor, and
+                Web Developer with 3+ years' experience in React.js & Node.js. Lifelong learner, strong collaborator, mentor, and
                 problem-solver.
               </div>
               <div className={styles.contacts}>
@@ -98,9 +104,9 @@ const MainPage = () => {
               </div>
               <div className={styles.social}>
                 <ul>
-                  {social.map(i => {
+                  {social.map((i, index) => {
                     return (
-                      <li>
+                      <li key={index}>
                         <a href={i.link} rel="noreferrer" target="_blank">
                           <img width={40} src={i.img} alt=""/>
                           <span>{i.name}</span>

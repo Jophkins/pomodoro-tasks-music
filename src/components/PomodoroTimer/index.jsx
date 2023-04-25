@@ -18,10 +18,10 @@ const PomodoroTimer = () => {
 
   let interval = null;
 
-  const startTimer = () => {
-    interval = setInterval(() => {
-      clearInterval(interval);
+  const intervalRef = React.useRef(null);
 
+  const startTimer = React.useCallback(() => {
+    intervalRef.current = setInterval(() => {
       if (seconds === 0) {
         if (minutes !== 0) {
           setSeconds(59);
@@ -39,9 +39,8 @@ const PomodoroTimer = () => {
       } else {
         setSeconds((prev) => prev - 1);
       }
-
     }, 1000);
-  }
+  }, [seconds, minutes, isBreak, isShortBreak]);
 
   const timerPauseHandler = () => {
     clearInterval(interval);
@@ -68,9 +67,11 @@ const PomodoroTimer = () => {
     if (isTimerOn) {
       startTimer();
     }
-  }, [isTimerOn, seconds]);
 
-
+    return () => {
+      clearInterval(intervalRef.current);
+    };
+  }, [isTimerOn, seconds, startTimer]);
 
 
   const timerMinutes = minutes < 10 ? `0${minutes}` : minutes;

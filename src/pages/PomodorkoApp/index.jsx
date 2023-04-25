@@ -1,4 +1,3 @@
-import './Pomodorka_app.module.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Todo from "../../components/Todo";
 import React, {createContext, useEffect, useState} from "react";
@@ -25,7 +24,7 @@ function PomodorkoApp({title}) {
     setTodos(JSON.parse(localStorage.todo));
     setLanguage(JSON.parse(localStorage.locale));
     document.title = title;
-  }, [])
+  }, [title])
 
   return (
     <Context.Provider value={{
